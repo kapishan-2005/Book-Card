@@ -1,8 +1,7 @@
-import BookCard from "./bookcard.jsx";
-
+import BookCard from './bookcard.jsx';
 function BookList({ books }) {
   return (
-    <div style={styles.list}>
+    <div className="flex flex-wrap justify-center gap-6">
       {books.map((book, index) => (
         <BookCard
           key={index}
@@ -14,14 +13,4 @@ function BookList({ books }) {
     </div>
   );
 }
-
-const styles = {
-  list: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "20px",
-    flexWrap: "wrap"
-  }
-};
-
 export default BookList;

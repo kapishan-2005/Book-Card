@@ -1,47 +1,28 @@
-import { useState } from "react";
-import BookList from "./booklist.jsx";
-
+import BookList from './booklist.jsx';
+import './index.css'; // make sure Tailwind is imported here
 function App() {
-  const [books] = useState([
+  const myBooks = [
     {
       title: "To Kill a Mockingbird",
       author: "Harper Lee",
-      description:
-        "A novel set in the American South during the 1930s."
+      description: "A novel set in the American South during the 1930s."
     },
     {
       title: "1984",
       author: "George Orwell",
-      description:
-        "A dystopian novel set in a totalitarian regime."
+      description: "A dystopian novel set in a totalitarian regime."
     },
     {
       title: "The Great Gatsby",
       author: "F. Scott Fitzgerald",
-      description:
-        "A novel depicting the Jazz Age and the American Dream."
+      description: "A novel depicting the Jazz Age and the American Dream."
     }
-  ]);
-
+  ];
   return (
-    <div style={styles.app}>
-      <h1 style={styles.heading}>Book List</h1>
-      <BookList books={books} />
+    <div className="bg-gray-900 text-white min-h-screen p-10">
+      <h1 className="text-4xl font-bold text-center mb-8">Book List</h1>
+      <BookList books={myBooks} />
     </div>
   );
 }
-
-const styles = {
-  app: {
-    minHeight: "100vh",
-    backgroundColor: "#020b2d",
-    padding: "40px",
-    textAlign: "center",
-    color: "white"
-  },
-  heading: {
-    marginBottom: "30px"
-  }
-};
-
 export default App;
